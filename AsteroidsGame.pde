@@ -1,63 +1,86 @@
-Spaceship yoyoship;
-//your variable declarations here
+Spaceship yoyoship;//your variable declarations here
 public void setup() 
 {
-  size(700, 700);
+  fill(0);
+  size(800, 600);
   yoyoship = new Spaceship();
 }
 public void draw() 
 {
   yoyoship.show();
 }
+public void keyPressed()
+{
+  if(key=="w")
+    {
+      yoyoship.rotate();
+    }
+  if(key=="s")
+    {
+      yoyoship.rotate();
+    }
+  if(key=="a")
+    {
+      yoyoship.rotate();
+    }
+  if(key=="d")
+    {
+      yoyoship.rotate();
+    }
+  if(key==" ")
+    {
+      yoyoship.accelerate();
+    }
+}
 class Spaceship extends Floater  
 {   
-    public void setX(int x) {x = myX;}
-    public void getX() {return myX;}
-    public void setY(int y) {y = myY;}
-    public void getY() {return myY;}
+    public void setX(int x) {myCenterX = x;}
+    public int getX() {return (int)myCenterX;}
+    public void setY(int y) {myCenterY = y;}
+    public int getY() {return (int)myCenterY;}
     public void setDirectionX(double x) {x = myDirectionX;}
-    public void getDirectionX() {return myDirectionX;}
+    public double getDirectionX() {return myDirectionX;}
     public void setDirectionY(double y) {y = myDirectionY;}
-    public void getDirectionY() {return myDirectionY;}
-    public void getPointDirection();
-    public void setPointDirection(int degrees) {degrees = myPointDirection;}
+    public double getDirectionY() {return myDirectionY;}
+    public void setPointDirection(int degrees) {myPointDirection = degrees;}
+    public double getPointDirection(){return myPointDirection;}
 
     public Spaceship()
     {
         corners = 14;
         xCorners = new int [corners];
         yCorners = new int [corners];
-        xCorners[0] = 6;
-        xCorners[1] = 2;
-        xCorners[2] = 1;
-        xCorners[3] = -2;
-        xCorners[4] = -2;
-        xCorners[5] = -4;
-        xCorners[6] = -7;
-        xCorners[7] = -4;
-        xCorners[8] = -7;
-        xCorners[9] = -4;
-        xCorners[10] = -2;
-        xCorners[11] = -2;
-        xCorners[12] = 1;
-        xCorners[13] = 2;
+        xCorners[0] = 24;
+        xCorners[1] = 8;
+        xCorners[2] = 4;
+        xCorners[3] = -8;
+        xCorners[4] = -8;
+        xCorners[5] = -16;
+        xCorners[6] = -28;
+        xCorners[7] = -16;
+        xCorners[8] = -28;
+        xCorners[9] = -16;
+        xCorners[10] = -8;
+        xCorners[11] = -8;
+        xCorners[12] = 4;
+        xCorners[13] = 8;
         yCorners[0] = 0;
-        yCorners[1] = 2;
-        yCorners[2] = 4;
-        yCorners[3] = 5;
-        yCorners[4] = 3;
-        yCorners[5] = 4;
-        yCorners[6] = 2;
+        yCorners[1] = 8;
+        yCorners[2] = 16;
+        yCorners[3] = 20;
+        yCorners[4] = 12;
+        yCorners[5] = 16;
+        yCorners[6] = 8;
         yCorners[7] = 0;
-        yCorners[8] = -2;
-        yCorners[9] = -4;
-        yCorners[10] = -3;
-        yCorners[11] = -5;
-        yCorners[12] = -4;
-        yCorners[13] = -2;
-        myColor = color(255);
-        myCentery = 350;
-        myCenterY = 350;
+        yCorners[8] = -8;
+        yCorners[9] = -16;
+        yCorners[10] = -12;
+        yCorners[11] = -20;
+        yCorners[12] = -16;
+        yCorners[13] = -8;
+        myColor = color(100,220,220);
+        myCenterX = 400;
+        myCenterY = 400;
         myDirectionX = 0;
         myDirectionY = 0;
         myPointDirection = 270;//degrees not radians
