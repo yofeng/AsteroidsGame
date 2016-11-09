@@ -1,15 +1,67 @@
+Spaceship yoyoship;
 //your variable declarations here
 public void setup() 
 {
-  //your code here
+  size(700, 700);
+  yoyoship = new Spaceship();
 }
 public void draw() 
 {
-  //your code here
+  yoyoship.show();
 }
-class Spaceship //extends Floater  
+class Spaceship extends Floater  
 {   
-    //your code here
+    public void setX(int x) {x = myX;}
+    public void getX() {return myX;}
+    public void setY(int y) {y = myY;}
+    public void getY() {return myY;}
+    public void setDirectionX(double x) {x = myDirectionX;}
+    public void getDirectionX() {return myDirectionX;}
+    public void setDirectionY(double y) {y = myDirectionY;}
+    public void getDirectionY() {return myDirectionY;}
+    public void getPointDirection();
+    public void setPointDirection(int degrees) {degrees = myPointDirection;}
+
+    public Spaceship()
+    {
+        corners = 14;
+        xCorners = new int [corners];
+        yCorners = new int [corners];
+        xCorners[0] = 6;
+        xCorners[1] = 2;
+        xCorners[2] = 1;
+        xCorners[3] = -2;
+        xCorners[4] = -2;
+        xCorners[5] = -4;
+        xCorners[6] = -7;
+        xCorners[7] = -4;
+        xCorners[8] = -7;
+        xCorners[9] = -4;
+        xCorners[10] = -2;
+        xCorners[11] = -2;
+        xCorners[12] = 1;
+        xCorners[13] = 2;
+        yCorners[0] = 0;
+        yCorners[1] = 2;
+        yCorners[2] = 4;
+        yCorners[3] = 5;
+        yCorners[4] = 3;
+        yCorners[5] = 4;
+        yCorners[6] = 2;
+        yCorners[7] = 0;
+        yCorners[8] = -2;
+        yCorners[9] = -4;
+        yCorners[10] = -3;
+        yCorners[11] = -5;
+        yCorners[12] = -4;
+        yCorners[13] = -2;
+        myColor = color(255);
+        myCentery = 350;
+        myCenterY = 350;
+        myDirectionX = 0;
+        myDirectionY = 0;
+        myPointDirection = 270;//degrees not radians
+    }
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
