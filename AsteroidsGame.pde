@@ -13,11 +13,11 @@ public void keyPressed()
 {
   if(key=="w")
     {
-      yoyoship.rotate();
+      yoyoship.move();
     }
   if(key=="s")
     {
-      yoyoship.rotate();
+      yoyoship.move();
     }
   if(key=="a")
     {
