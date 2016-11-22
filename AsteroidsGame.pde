@@ -7,31 +7,36 @@ public void setup()
 }
 public void draw() 
 {
+  background(0);
   yoyoship.show();
 }
 public void keyPressed()
 {
-  if(key=="w")
+  if(key=='w')
     {
       yoyoship.move();
     }
-  if(key=="s")
+  if(key=='s')
     {
       yoyoship.move();
     }
-  if(key=="a")
+  if(key=='a')
     {
-      yoyoship.rotate();
+      yoyoship.rotate(-10);
     }
-  if(key=="d")
+  if(key=='d')
     {
-      yoyoship.rotate();
+      yoyoship.rotate(10);
     }
-  if(key==" ")
+  if(key=='q')
     {
-      yoyoship.accelerate();
+      yoyoship.accelerate(5);
     }
+  if(key==' ')
+  {
+  }
 }
+
 class Spaceship extends Floater  
 {   
     public void setX(int x) {myCenterX = x;}
@@ -119,7 +124,12 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   {     
     //rotates the floater by a given number of degrees    
     myPointDirection+=nDegreesOfRotation;   
-  }   
+  } 
+  public void hyperspace()
+  {
+    myDirectionX = myDirectionX+(int)(Math.random()*400)-600;
+    myDirectionY = myDirectionY+(int)(Math.random()*400)-600;
+  }  
   public void move ()   //move the floater in the current direction of travel
   {      
     //change the x and y coordinates by myDirectionX and myDirectionY       
