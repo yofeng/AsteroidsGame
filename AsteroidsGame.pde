@@ -28,12 +28,9 @@ public void keyPressed()
     {
       yoyoship.rotate(10);
     }
-  if(key=='q')
-    {
-      yoyoship.accelerate(5);
-    }
   if(key==' ')
   {
+    yoyoship.hyperspace();
   }
 }
 
@@ -115,7 +112,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   public void accelerate (double dAmount)   
   {          
     //convert the current direction the floater is pointing to radians    
-    double dRadians =myPointDirection*(Math.PI/180);     
+    double dRadians = myPointDirection*(Math.PI/180);     
     //change coordinates of direction of travel    
     myDirectionX += ((dAmount) * Math.cos(dRadians));    
     myDirectionY += ((dAmount) * Math.sin(dRadians));       
@@ -127,14 +124,19 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   } 
   public void hyperspace()
   {
-    myDirectionX = myDirectionX+(int)(Math.random()*400)-600;
-    myDirectionY = myDirectionY+(int)(Math.random()*400)-600;
+    yoyoship.accelerate(5);
+    yoyoship.setX((int)Math.random()*20);
+    yoyoship.setY((int)Math.random()*20);
+    yoyoship.setPointDirection((int)Math.random()*360);
+    yoyoship.setDirectionX((int)Math.random()*200);
+    yoyoship.setDirectionY((int)Math.random()*200);
   }  
   public void move ()   //move the floater in the current direction of travel
   {      
     //change the x and y coordinates by myDirectionX and myDirectionY       
     myCenterX += myDirectionX;    
-    myCenterY += myDirectionY;     
+    myCenterY += myDirectionY;
+    yoyoship.accelerate(3);     
 
     //wrap around screen    
     if(myCenterX >width)
