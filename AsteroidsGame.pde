@@ -1,36 +1,38 @@
-Spaceship yoyoship;//your variable declarations here
+//your variable declarations here
+Spaceship yoShip;
 public void setup() 
 {
   fill(0);
   size(800, 600);
-  yoyoship = new Spaceship();
+  yoShip = new Spaceship();
 }
 public void draw() 
 {
   background(0);
-  yoyoship.show();
+  yoShip.show();
+  yoShip.move();
 }
 public void keyPressed()
 {
   if(key=='w')
     {
-      yoyoship.move();
+      yoShip.accelerate(0.3);
     }
   if(key=='s')
     {
-      yoyoship.move();
+      yoShip.accelerate(-0.3);
     }
   if(key=='a')
     {
-      yoyoship.rotate(-10);
+      yoShip.rotate(-10);
     }
   if(key=='d')
     {
-      yoyoship.rotate(10);
+      yoShip.rotate(10);
     }
   if(key==' ')
   {
-    yoyoship.hyperspace();
+    yoShip.hyperspace();
   }
 }
 
@@ -87,7 +89,29 @@ class Spaceship extends Floater
         myDirectionY = 0;
         myPointDirection = 270;//degrees not radians
     }
+    public void hyperspace()
+    {
+      yoShip.setX((int)(Math.random()*600));
+      yoShip.setY((int)(Math.random()*600));
+      yoShip.setPointDirection((int)(Math.random()*360));
+      yoShip.setDirectionX(0);
+      yoShip.setDirectionY(0);
+    } 
 }
+class Star
+{
+  public Star()
+  {
+    
+  }
+  public void show()
+  {
+    fill(25);
+    stroke(50);
+    ellipse((int)(Math.random()*600),(int)(Math.random()*600), 5, 5);
+  }
+}
+
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
   protected int corners;  //the number of corners, a triangular floater has 3   
@@ -122,21 +146,12 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     //rotates the floater by a given number of degrees    
     myPointDirection+=nDegreesOfRotation;   
   } 
-  public void hyperspace()
-  {
-    yoyoship.accelerate(5);
-    yoyoship.setX((int)Math.random()*20);
-    yoyoship.setY((int)Math.random()*20);
-    yoyoship.setPointDirection((int)Math.random()*360);
-    yoyoship.setDirectionX((int)Math.random()*200);
-    yoyoship.setDirectionY((int)Math.random()*200);
-  }  
+   
   public void move ()   //move the floater in the current direction of travel
   {      
     //change the x and y coordinates by myDirectionX and myDirectionY       
     myCenterX += myDirectionX;    
-    myCenterY += myDirectionY;
-    yoyoship.accelerate(3);     
+    myCenterY += myDirectionY;    
 
     //wrap around screen    
     if(myCenterX >width)
