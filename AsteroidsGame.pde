@@ -119,8 +119,8 @@ class Star
   public void show()
   {
     fill((int)(Math.random()*25) + 230, 240, (int)(Math.random()*255));
-    stroke(255);
-    ellipse(myX, myY, 4, 4);
+    stroke(100);
+    ellipse(myX, myY, 3, 3);
   }
 }
 
