@@ -1,35 +1,26 @@
 //your variable declarations here
 Spaceship yoShip;
-<<<<<<< HEAD
 Star[] yoStar;
-=======
->>>>>>> 99a20d7115f5c4f6015412b672b5f128370f3b0b
 public void setup() 
 {
   fill(0);
   size(800, 600);
   yoShip = new Spaceship();
-<<<<<<< HEAD
   yoStar = new Star[750];
   for(int i = 0; i < yoStar.length; i++)
   {
     yoStar[i]= new Star(); 
   }
-=======
->>>>>>> 99a20d7115f5c4f6015412b672b5f128370f3b0b
 }
 public void draw() 
 {
   background(0);
   yoShip.show();
   yoShip.move();
-<<<<<<< HEAD
   for(int i = 0; i < yoStar.length; i++)
   {
     yoStar[i].show(); 
   }
-=======
->>>>>>> 99a20d7115f5c4f6015412b672b5f128370f3b0b
 }
 public void keyPressed()
 {
@@ -119,7 +110,6 @@ class Spaceship extends Floater
 }
 class Star
 {
-<<<<<<< HEAD
   private int myX, myY;
   public Star()
   {
@@ -131,17 +121,6 @@ class Star
     fill((int)(Math.random()*25) + 230, 200, (int)(Math.random()*255));
     stroke(50);
     ellipse(myX, myY, 3, 3);
-=======
-  public Star()
-  {
-    
-  }
-  public void show()
-  {
-    fill(25);
-    stroke(50);
-    ellipse((int)(Math.random()*600),(int)(Math.random()*600), 5, 5);
->>>>>>> 99a20d7115f5c4f6015412b672b5f128370f3b0b
   }
 }
 
