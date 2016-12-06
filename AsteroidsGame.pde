@@ -165,7 +165,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     myCenterX += myDirectionX;    
     myCenterY += myDirectionY;    
 
-    //wrap around screen    
+    //wraps around screen    
     if(myCenterX >width)
     {     
       myCenterX = 0;    
@@ -201,4 +201,3 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     endShape(CLOSE);  
   }   
 } 
-
