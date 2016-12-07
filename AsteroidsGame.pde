@@ -1,7 +1,7 @@
 //your variable declarations here
 Spaceship yoShip;
 Star[] yoStar;
-//Asteroid yoAsteroid;
+Asteroid[] yoAsteroid;
 
 public void setup() 
 {
@@ -13,12 +13,13 @@ public void setup()
   {
     yoStar[i]= new Star(); 
   }
-//  yoAsteroid = new Asteroid [75];
-//  for(int i = 0; i < yoAsteroid.length; i++)
-//  {
-//    yoAsteroid = new Asteroid(); 
-//  }
+  yoAsteroid = new Asteroid[50];
+  for(int i = 0; i < yoAsteroid.length; i++)
+  {
+    yoAsteroid[i] = new Asteroid(); 
+  }
 }
+
 public void draw() 
 {
   background(0);
@@ -28,12 +29,13 @@ public void draw()
   {
     yoStar[i].show(); 
   }
-//  for(int i = 0; i < yoAsteroid.length; i++)
-//  {
-//   yoAsteroid.show();
-//   yoAsteroid.move(); 
-//  }
+  for(int a = 0; a < yoAsteroid.length; a++)
+  {
+    yoAsteroid[a].show();
+    yoAsteroid[a].move(); 
+  }
 }
+
 public void keyPressed()
 {
   if(key=='w')
