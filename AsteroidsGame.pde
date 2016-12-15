@@ -2,6 +2,7 @@
 Spaceship yoShip;
 Star[] yoStar;
 ArrayList<Asteroid> yoAsteroid = new ArrayList<Asteroid>();
+Bullet yoBullet;
 
 public void setup() 
 {
@@ -13,11 +14,11 @@ public void setup()
   {
     yoStar[i]= new Star(); 
   }
-  
   for(int i = 0; i < 10; i++)
   {
     yoAsteroid.add(new Asteroid());
   }
+  yoBullet = new Bullet();
 }
 
 public void draw() 
@@ -43,6 +44,7 @@ public void draw()
        nI--;
      }
   }
+  yoBullet.show();
 }
 
 public void keyPressed()
