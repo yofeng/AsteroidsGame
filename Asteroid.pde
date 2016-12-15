@@ -21,10 +21,10 @@ class Asteroid extends Floater
 		yCorners[0] = -18;
 		xCorners[1] = 17;
 		yCorners[1] = -18;
-		xCorners[2] = 23;
+		xCorners[2] = 13;
 		yCorners[2] = 0;
-		xCorners[3] = 6;
-		yCorners[3] = 20;
+		xCorners[3] = 16;
+		yCorners[3] = 15;
 		xCorners[4] = -21;
 		yCorners[4] = 18;
 		xCorners[5] = -15;

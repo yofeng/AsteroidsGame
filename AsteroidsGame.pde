@@ -1,22 +1,22 @@
 //your variable declarations here
 Spaceship yoShip;
 Star[] yoStar;
-Asteroid[] yoAsteroid;
+ArrayList<Asteroid> yoAsteroid = new ArrayList<Asteroid>();
 
 public void setup() 
 {
   fill(0);
   size(800, 600);
   yoShip = new Spaceship();
-  yoStar = new Star[50];
+  yoStar = new Star[750];
   for(int i = 0; i < yoStar.length; i++)
   {
     yoStar[i]= new Star(); 
   }
-  yoAsteroid = new Asteroid[20];
-  for(int i = 0; i < yoAsteroid.length; i++)
+  
+  for(int i = 0; i < 10; i++)
   {
-    yoAsteroid[i] = new Asteroid(); 
+    yoAsteroid.add(new Asteroid());
   }
 }
 
@@ -29,10 +29,19 @@ public void draw()
   {
     yoStar[i].show(); 
   }
-  for(int a = 0; a < yoAsteroid.length; a++)
+  for(int a = 0; a < yoAsteroid.size(); a++)
   {
-    yoAsteroid[a].show();
-    yoAsteroid[a].move(); 
+    yoAsteroid.get(a).show();
+    yoAsteroid.get(a).move(); 
+  }
+  for(int nI = 0; nI < yoAsteroid.size(); nI++) 
+  {
+     if(dist(yoShip.getX(),yoShip.getY(),yoAsteroid.get(nI).getX(),yoAsteroid.get(nI).getY())<20)
+     //if distance between asteroid and spaceship is less than 20 otherwise move normally
+     {
+       yoAsteroid.remove(nI);
+       nI--;
+     }
   }
 }
 
