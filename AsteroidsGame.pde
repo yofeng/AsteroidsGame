@@ -8,12 +8,12 @@ public void setup()
   fill(0);
   size(800, 600);
   yoShip = new Spaceship();
-  yoStar = new Star[750];
+  yoStar = new Star[50];
   for(int i = 0; i < yoStar.length; i++)
   {
     yoStar[i]= new Star(); 
   }
-  yoAsteroid = new Asteroid[50];
+  yoAsteroid = new Asteroid[20];
   for(int i = 0; i < yoAsteroid.length; i++)
   {
     yoAsteroid[i] = new Asteroid(); 
